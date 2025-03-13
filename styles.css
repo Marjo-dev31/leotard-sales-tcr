@@ -2,7 +2,7 @@ body,
 html {
    margin: 0;
    box-sizing: border-box;
-   background-color: rgb(255, 211, 153);
+   background-color: rgb(252, 236, 215);
 }
 
 .header-container {
@@ -16,6 +16,8 @@ header p {
 
 #logo {
    height: 10rem;
+   background-color: black;
+   border-radius: 50%;
 }
 
 main {
@@ -46,6 +48,7 @@ p {
 span {
    color: rgb(136, 36, 36);
    font-size:1.5rem;
+   text-decoration: underline;
 }
 
 img {
