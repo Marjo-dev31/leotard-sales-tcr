@@ -101,10 +101,10 @@ function getDiversImg() {
       ) {
          imgElement.classList.add("rotate-90");
       }
-      if (i=== 1 || i===3 || i===4 || i===8|| i===15 ) {
+      if (i === 1 || i === 3 || i === 4 || i === 8 || i === 15) {
          imgElement.classList.add("rotate-270");
       }
-      if (i=== 5 || i===9 ) {
+      if (i === 5 || i === 9) {
          imgElement.classList.add("rotate-180");
       }
    }
@@ -129,9 +129,28 @@ function getDuoCombiImg() {
    }
 }
 
+async function getCounter() {
+    const header = new Headers();
+    header.append("Content-type", "application/json");
+    const init = {
+        method: "PATCH",
+        headers: header,
+     };
+
+   let counter = 0;
+   await fetch(
+      "https://k3yazg4mb0.execute-api.eu-west-3.amazonaws.com/counter", init
+   )
+      .then((response) => {
+         return response.json();
+      })
+      .then((jsonResponse) => {counter = jsonResponse.Attributes.quantity, console.log(counter)});
+}
+
 getSoloImg();
 getDuoImg();
 getTeamImg();
 getDiversImg();
 getSoloCombiImg();
 getDuoCombiImg();
+getCounter();
